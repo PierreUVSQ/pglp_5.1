@@ -134,4 +134,40 @@ public class AppTest
     }
 
 
+    @Test
+    public void testGroupeDAO(){
+
+        Groupe g = new Groupe("toto");
+        List<String> tmp = new ArrayList<>();
+        tmp.add("0000000");
+        tmp.add("12345678");
+        Personnel p1 = new Personnel.Builder("Smith", "John", "ComputerScienist").updatePhoneList(tmp).build();
+        Personnel p2 = new Personnel.Builder("pg", "lp", "class").updatePhoneList(tmp).build();
+        DAO ag = DAOFactory.getGroupeDAO();
+        ag.create(g);
+        Groupe test = (Groupe) ag.find("groupe");
+        assertEquals("toto", test.getNom());
+
+
+    }
+
+    @Test
+    public void testPersonnelDAO(){
+
+        List<String> tmp = new ArrayList<>();
+        tmp.add("0000000");
+        tmp.add("12345678");
+        Personnel p1 = new Personnel.Builder("Smith", "John", "ComputerScienist").updatePhoneList(tmp).build();
+        DAO ap = new PersonnelDAO();
+        ap.create(p1);
+        Personnel test = (Personnel) ap.find("personnel");
+        assertEquals("Smith", test.getNom());
+        for(String e : test.getTel()){
+            System.out.println(e);
+
+        }
+
+
+    }
+
 }

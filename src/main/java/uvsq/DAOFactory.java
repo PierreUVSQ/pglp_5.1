@@ -7,5 +7,13 @@ public class DAOFactory {
         return new AnnuaireDAO();
     }
 
+    public static DAO<Groupe> getGroupeDAO(){
 
+        return new GroupeDAO();
+    }
+
+    public static DAO<Personnel> getPersonnelDAO(){
+
+        return new PersonnelDAO();
+    }
 }
