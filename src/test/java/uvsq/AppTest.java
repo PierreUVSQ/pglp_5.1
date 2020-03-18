@@ -54,7 +54,7 @@ public class AppTest
         a.addEquipe(g2);
 
         System.out.println("Created");
-        try(ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("/home/piere/Bureau/data")))) {
+        try(ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("data")))) {
             out.writeObject(Annuaire.getInstance());
         }
         catch(IOException ioe){
@@ -62,13 +62,13 @@ public class AppTest
         }
         System.out.println("registered");
 
-        try(ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("/home/piere/Bureau/data")))) {
+        try(ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("data")))) {
             Annuaire  test = (Annuaire) in.readObject();
             for(Equipe e : test) {
 
                 e.printNom();
             }
-          
+         
 
         }
         catch(ClassNotFoundException | IOException e){
