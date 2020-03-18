@@ -68,7 +68,17 @@ public class AppTest
 
                 e.printNom();
             }
-         
+            Iterator jsp1 = test.iterator();
+            Iterator jsp2 = a.iterator();
+            Equipe e1 ;
+            Equipe e2 ;
+            while(jsp1.hasNext() && jsp2.hasNext()) {
+
+                e1 = (Equipe) jsp1.next();
+                e2 = (Equipe) jsp2.next();
+                assertEquals( e1.getNom(), e2.getNom());
+
+            }
 
         }
         catch(ClassNotFoundException | IOException e){
