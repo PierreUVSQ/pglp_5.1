@@ -1,10 +1,11 @@
 package uvsq;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 import java.lang.Iterable;
 
-public class Annuaire implements Iterable<Equipe> {
+public class Annuaire implements Iterable<Equipe>, Serializable {
 
 	private static Annuaire ANNUAIRE; //instance 
 	private EquipeIterator<Equipe> head; //tête de l'itérateur

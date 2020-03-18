@@ -1,9 +1,10 @@
 package uvsq;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public final class Personnel extends Equipe {
+public final class Personnel extends Equipe implements Serializable {
 
 
 	private final String nom;

@@ -1,8 +1,9 @@
 package uvsq;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
-public class EquipeIterator<Equipe> implements Iterator<Equipe>{
+public class EquipeIterator<Equipe> implements Iterator<Equipe>, Serializable {
 
 	private int index;
 	private Node<Equipe> e;

@@ -1,10 +1,11 @@
 package uvsq;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Groupe extends Equipe implements Iterable<Equipe>{
+public class Groupe extends Equipe implements Iterable<Equipe>, Serializable {
 
 	private final String nom;
 	private EquipeIterator<Equipe> head;
