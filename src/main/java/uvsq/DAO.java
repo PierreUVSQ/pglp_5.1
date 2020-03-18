@@ -9,8 +9,7 @@ public interface DAO<T> {
 
     public T create(T obj);
     public T find(String id);
-    public T update(T obj);
-    public void delete(T obj);
+    public void delete(String file);
 
 
 
