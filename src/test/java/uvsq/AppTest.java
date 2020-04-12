@@ -96,7 +96,7 @@ public class AppTest
     @Test
     public void annuaireDAOtest(){
 
-        DAO ad = DAOFactory.getAnnuaireDAO();
+        Dao ad = DaoFactory.getAnnuaireDao();
         Annuaire a = Annuaire.getInstance();
         String tel = new String("00000000");
         Groupe gg = new Groupe("PDG");
@@ -143,7 +143,7 @@ public class AppTest
         tmp.add("12345678");
         Personnel p1 = new Personnel.Builder("Smith", "John", "ComputerScienist").updatePhoneList(tmp).build();
         Personnel p2 = new Personnel.Builder("pg", "lp", "class").updatePhoneList(tmp).build();
-        DAO ag = DAOFactory.getGroupeDAO();
+        Dao ag = DaoFactory.getGroupeDao();
         ag.create(g);
         Groupe test = (Groupe) ag.find("groupe");
         assertEquals("toto", test.getNom());
@@ -158,7 +158,7 @@ public class AppTest
         tmp.add("0000000");
         tmp.add("12345678");
         Personnel p1 = new Personnel.Builder("Smith", "John", "ComputerScienist").updatePhoneList(tmp).build();
-        DAO ap = new PersonnelDAO();
+        Dao ap = new PersonnelDao();
         ap.create(p1);
         Personnel test = (Personnel) ap.find("personnel");
         assertEquals("Smith", test.getNom());
